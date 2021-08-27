@@ -41,17 +41,17 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-fliprtest1-staging-121523-deployment/amplify-cfn-templates/auth/fliprtest1-cloudformation-template.yml",
         "logicalId": "authfliprtest1"
       },
-      "lastPushTimeStamp": "2021-08-27T12:43:21.461Z",
+      "lastPushTimeStamp": "2021-08-27T13:43:07.086Z",
       "output": {
-        "UserPoolId": "ap-south-1_ol31GhYqL",
-        "AppClientIDWeb": "6op6m5vmah57d45qbdmla41hva",
-        "AppClientID": "6o82a21vgd4935h1boqr6m96de",
-        "IdentityPoolId": "ap-south-1:d0ebfb74-eb1d-4918-8c25-6fc20cc10c70",
-        "UserPoolArn": "arn:aws:cognito-idp:ap-south-1:022796499078:userpool/ap-south-1_ol31GhYqL",
+        "UserPoolId": "ap-south-1_jcLpcCZEZ",
+        "AppClientIDWeb": "6bouua3qauj9uvf2ab8o3rclkn",
+        "AppClientID": "4u804pr5ud3chc2tf8r71nalnp",
+        "IdentityPoolId": "ap-south-1:6b6bc2bc-fbca-4ee2-9ce8-3895d722e843",
+        "UserPoolArn": "arn:aws:cognito-idp:ap-south-1:022796499078:userpool/ap-south-1_jcLpcCZEZ",
         "IdentityPoolName": "testAuthIdentityPool__staging",
         "UserPoolName": "fliprtest1"
       },
-      "lastPushDirHash": "SMZhimt80+q+a4hFKpdTpOE0IDg="
+      "lastPushDirHash": "8oXkDU5TioRHRE9nblsr643LvJA="
     }
   }
 }

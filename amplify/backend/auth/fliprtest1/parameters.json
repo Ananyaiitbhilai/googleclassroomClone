@@ -1,7 +1,7 @@
 {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "fliprt51e00592",
+    "resourceNameTruncated": "fliprt04532f05",
     "userPoolName": "fliprtest1",
     "autoVerifiedAttributes": [
         "email"
@@ -30,9 +30,9 @@
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "fliprt51e00592_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "fliprt04532f05_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "51e00592",
+    "sharedId": "04532f05",
     "resourceName": "fliprtest1",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {

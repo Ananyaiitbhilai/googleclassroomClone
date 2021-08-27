@@ -10,6 +10,11 @@
       "StackName": "amplify-fliprtest1-staging-121523",
       "StackId": "arn:aws:cloudformation:ap-south-1:022796499078:stack/amplify-fliprtest1-staging-121523/74d6edb0-0730-11ec-8d6d-02265090c556",
       "AmplifyAppId": "d1h54zla54i5jc"
+    },
+    "categories": {
+      "auth": {
+        "fliprtest1": {}
+      }
     }
   }
 }

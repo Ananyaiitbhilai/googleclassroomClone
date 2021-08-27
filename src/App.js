@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Amplify from "aws-amplify";
+import awsconfig from "./aws-exports";
+import './App.css'
 
-function App() {
+import { AmplifyAuthenticator, AmplifySignUp, AmplifySignIn, AmplifySignOut } from '@aws-amplify/ui-react';
+
+
+Amplify.configure(awsconfig);
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AmplifyAuthenticator>
+      <AmplifySignUp
+        slot="sign-up"
+        formFields={[
+          {
+            type: "username",
+            label: "Username",
+            placeholder: "Enter Username",
+            inputProps: { required: true, autocomplete: "username" }
+            
+          },
+          {
+            type: "password",
+            label: "Password",
+            placeholder: "Enter Password",
+            inputProps: { required: true, autocomplete: "password" }
+          }
+        ]} 
+      />
+
+      <AmplifySignIn slot="sign-in" />
+
+      <div className="App">
+       <header className="App-header">
+        <h2>LOLOL</h2>
+        <AmplifySignOut />
+       </header>
+     </div>
+    
+    </AmplifyAuthenticator>
+    
   );
-}
+};
 
 export default App;
