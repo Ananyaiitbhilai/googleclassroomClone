@@ -30,7 +30,28 @@ const App = () => {
         ]} 
       />
 
-      <AmplifySignIn slot="sign-in" />
+      <AmplifySignIn 
+      
+        slot="sign-in"
+        formFields = {[
+
+          {
+            type:'username',
+            label:'Email Address',
+            placeholder:'Enter Email Address',
+            inputProps: { required: true, autocomplete: "username" }
+          },
+          {
+            type: "password",
+            label: "Password",
+            placeholder: "Enter Password",
+            inputProps: { required: true, autocomplete: "password" }
+          }
+
+        ]
+        } 
+      
+      />
 
       <div className="App">
        <header className="App-header">
