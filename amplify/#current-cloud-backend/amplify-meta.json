@@ -1,0 +1,57 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fliprtest1-staging-121523-authRole",
+      "UnauthRoleArn": "arn:aws:iam::022796499078:role/amplify-fliprtest1-staging-121523-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::022796499078:role/amplify-fliprtest1-staging-121523-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-fliprtest1-staging-121523-deployment",
+      "UnauthRoleName": "amplify-fliprtest1-staging-121523-unauthRole",
+      "StackName": "amplify-fliprtest1-staging-121523",
+      "StackId": "arn:aws:cloudformation:ap-south-1:022796499078:stack/amplify-fliprtest1-staging-121523/74d6edb0-0730-11ec-8d6d-02265090c556",
+      "AmplifyAppId": "d1h54zla54i5jc"
+    }
+  },
+  "auth": {
+    "fliprtest1": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "loginMechanisms": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS",
+            "REQUIRES_UPPERCASE"
+          ]
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-fliprtest1-staging-121523-deployment/amplify-cfn-templates/auth/fliprtest1-cloudformation-template.yml",
+        "logicalId": "authfliprtest1"
+      },
+      "lastPushTimeStamp": "2021-08-27T12:28:30.361Z",
+      "output": {
+        "UserPoolId": "ap-south-1_ol31GhYqL",
+        "AppClientIDWeb": "6op6m5vmah57d45qbdmla41hva",
+        "AppClientID": "6o82a21vgd4935h1boqr6m96de",
+        "IdentityPoolId": "ap-south-1:d0ebfb74-eb1d-4918-8c25-6fc20cc10c70",
+        "UserPoolArn": "arn:aws:cognito-idp:ap-south-1:022796499078:userpool/ap-south-1_ol31GhYqL",
+        "IdentityPoolName": "testAuthIdentityPool__staging",
+        "UserPoolName": "fliprtest1"
+      },
+      "lastPushDirHash": "SMZhimt80+q+a4hFKpdTpOE0IDg="
+    }
+  }
+}
