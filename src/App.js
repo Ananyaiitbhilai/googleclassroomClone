@@ -1,68 +1,48 @@
-import React from "react";
-import Amplify from "aws-amplify";
-import awsconfig from "./aws-exports";
-import './App.css'
-
-import { AmplifyAuthenticator, AmplifySignUp, AmplifySignIn, AmplifySignOut } from '@aws-amplify/ui-react';
-
+import React, { useEffect, useState } from 'react';
+import Amplify, { Auth, Hub } from 'aws-amplify';
+import awsconfig from './aws-exports';
 
 Amplify.configure(awsconfig);
 
-const App = () => {
+function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    Hub.listen('auth', ({ payload: { event, data } }) => {
+      switch (event) {
+        case 'signIn':
+        case 'cognitoHostedUI':
+          getUser().then(userData => setUser(userData));
+          break;
+        case 'signOut':
+          setUser(null);
+          break;
+        case 'signIn_failure':
+        case 'cognitoHostedUI_failure':
+          console.log('Sign in failure', data);
+          break;
+      }
+    });
+
+    getUser().then(userData => setUser(userData));
+  }, []);
+
+  function getUser() {
+    return Auth.currentAuthenticatedUser()
+      .then(userData => userData)
+      .catch(() => console.log('Not signed in'));
+  }
+
   return (
-    <AmplifyAuthenticator>
-      <AmplifySignUp
-        slot="sign-up"
-        formFields={[
-          {
-            type: "username",
-            label: "Username",
-            placeholder: "Enter Username",
-            inputProps: { required: true, autocomplete: "username" }
-            
-          },
-          {
-            type: "password",
-            label: "Password",
-            placeholder: "Enter Password",
-            inputProps: { required: true, autocomplete: "password" }
-          }
-        ]} 
-      />
-
-      <AmplifySignIn 
-      
-        slot="sign-in"
-        formFields = {[
-
-          {
-            type:'username',
-            label:'Email Address',
-            placeholder:'Enter Email Address',
-            inputProps: { required: true, autocomplete: "username" }
-          },
-          {
-            type: "password",
-            label: "Password",
-            placeholder: "Enter Password",
-            inputProps: { required: true, autocomplete: "password" }
-          }
-
-        ]
-        } 
-      
-      />
-
-      <div className="App">
-       <header className="App-header">
-        <h2>LOLOL</h2>
-        <AmplifySignOut />
-       </header>
-     </div>
-    
-    </AmplifyAuthenticator>
-    
+    <div>
+      <p>User: {user ? JSON.stringify(user.attributes) : 'None'}</p>
+      {user ? (
+        <button onClick={() => Auth.signOut()}>Sign Out</button>
+      ) : (
+        <button onClick={() => Auth.federatedSignIn()}>Federated Sign In</button>
+      )}
+    </div>
   );
-};
+}
 
 export default App;
